@@ -25,7 +25,7 @@ class TestUser(unittest.TestCase):
         To test if the objects are instantiated correctly.
         """
 
-        self.assertEqual(self.new_user.user_name, "Francis")
+        self.assertEqual(self.new_user.user_name, "Jeff")
         self.assertEqual(self.new_user.password, "Master@2025")
 
 

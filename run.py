@@ -57,3 +57,95 @@ def create_password(length=10):
     """
     characters = string.ascii_letters +string.digits + string.punctuation
     return ''.join(random.choice(characters) for i in range(length))
+    
+
+def main():
+    print("Hello there. Welcome to Password Locker. Your secrets keeper. What is your name?")
+    print('/n')
+    user_name=input()
+    print('/n')
+    print(f'Hello {user_name}!')
+    print("You can use these short codes to navigate through Password_Locker")
+    print('/n')
+    while True:
+        print('cc-Create a password locker account')
+        print('lg- Login to you password_Locker account')
+        print('ex- Exit your password locker account')
+        print('/n')
+
+        short_code = input().lower()
+
+        if short_code =='cc':
+            print('Create your password Locker account')
+            print("_"*10)
+            print("First, enter your username")
+
+            user_name = input()
+            print(f'{user_name}. Enter a Password')
+            password=input()
+
+
+            save_new_user(create_user(user_name, password))
+
+            print('/n')
+
+            print(f'Hurray!, {user_name}, your account has successfully been created')
+
+            print('/n')
+
+            print('Try login in to your password locker account')
+
+            print('Enter your username')
+            login_username=input()
+
+            print('Enter the password you just created')
+            login_password=input()
+
+
+            if user_name!=login_username or password != login_password:
+                print('Invalid user_name or password!')
+                print('Please login in again try again')
+
+                login_username=input()
+
+                login_password=input()
+
+            else:
+                print('/n')
+                print(f'Welcome to your password locker account {user_name}')
+
+                print('/n')
+                save_new_user()
+
+        elif short_code =='lg':
+                print("Log in to your existing account")
+                print("Enter your username")
+                lg_username=input()
+                print("Enter your password")
+                lg_password = input()
+
+                if lg_username !='Francis' and lg_password !='Master@2025':
+                    print("Please create a password locker account")
+
+                else:
+                    print(f'Hellow {lg_username}. Welcome to you personal secrets keeper')
+                    print('/n')
+
+        elif short_code == 'ex':
+            print("Welcome back any time. Cheers!")
+            break
+        else:
+            print("Invalid short code. Try again")
+            print('cc-Create a password locker account')
+            print('lg- Login to you password_Locker account')
+            print('ex- Exit your password locker account')
+            print('/n')
+
+
+
+
+
+
+
+if __name__=='__main__':
+ main()    

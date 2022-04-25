@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
         setUp method that runs before every test cases
         """
 
-        self.new_user = User("Jeff", "Master@2025")
+        self.new_user = User("JeffHuria", "Master@2025")
 
     
     def test__init(self):
@@ -25,7 +25,7 @@ class TestUser(unittest.TestCase):
         To test if the objects are instantiated correctly.
         """
 
-        self.assertEqual(self.new_user.user_name, "Jeff")
+        self.assertEqual(self.new_user.user_name, "JeffHuria")
         self.assertEqual(self.new_user.password, "Master@2025")
 
 

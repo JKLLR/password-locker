@@ -142,7 +142,7 @@ def main():
             print('/n')
 
 
- def add_networks():
+def add_networks():
         print ("With you account ready, you can now save credentials of any network in here ")
         print("These are the short codes for navigating through")
         print('/n')
@@ -191,6 +191,49 @@ def main():
                 save_network_credentials(create_new_network(network_name, network_username, network_password))
 
                 print(f'Credentials for {network_name} have been added to your network list')
+
+
+
+            elif short_code=='aen':
+                print('Add existing network credentials')
+                print('_'*15)
+                print('Network_Name')
+                network_name=input()
+
+                print('Network_Username')
+                network_username=input()
+
+                print("Network_Password")
+                network_password=input()
+
+                save_network_credentials(create_new_network(network_name, network_username, network_password))
+
+                print(f'Credentials for {network_name} have been successfully saved')
+
+
+            elif short_code == 'view':
+                if display_networks():
+                    print('Here is a list of all your saved network credentials')
+                    print("__"*30)
+
+                    for network in display_networks():
+                        print(f'{network.network_name}, {network.network_username}, {network.network_password}')
+
+
+                    print('/n')
+                else:
+                    print('/n')
+                    print('No network credentials found')
+
+
+            elif short_code =='del':
+                pass
+
+            elif short_code == 'exit':
+                print('Thank you for visiting Password_ Locker.')
+                print('Have a good one')
+                break               
+
 
 
 

@@ -142,6 +142,55 @@ def main():
             print('/n')
 
 
+ def add_networks():
+        print ("With you account ready, you can now save credentials of any network in here ")
+        print("These are the short codes for navigating through")
+        print('/n')
+
+        while True:
+            print('ann-Add new credentials for any of your networks')
+
+            print('aen - Add an existing credentials for your networks')
+            print('view- Get to see all the credentials you have saved')
+            print('del- Delete saved network credentials')
+            print('exit- Exit from your account')
+
+            short_code = input().lower()
+
+            if short_code =='ann':
+                print ('Add credentials for a new network')
+                print('_'*10)
+
+                print('Network_Name:')
+                network_name=input()
+
+                print('Network_Username')
+                network_username=input()
+
+
+                print('/n')
+                print('For you password, enter either of the shortcodes')
+                print('gp- Let Password_Locker generate a password for your network')
+                print('mp- Enter my own password')
+
+                short_code = input().lower()
+
+
+                if short_code =='gp':
+
+                    network_password= create_password()
+                    print(network_password)
+                elif short_code=='mp':
+                    print("Network Password")
+                    network_password == input()
+
+                else:
+                    print("Invalid short code")
+
+
+                save_network_credentials(create_new_network(network_name, network_username, network_password))
+
+                print(f'Credentials for {network_name} have been added to your network list')
 
 
 
